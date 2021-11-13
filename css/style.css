@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #4b3d66;
+    
+}
+
+
+.iniciar_btn,
+.boxes_info,
+.box_quiz,
+.box_resultado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.boxes_info.infoAtivo,
+.box_quiz.quizAtivo,
+.box_resultado.resultadoAtivo {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.iniciar_btn button {
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+    padding: 15px 30px;
+    outline: none;
+    border: 1px solid #9d9afb;
+    border-radius: 5px;
+    background: #f4e4f6;
+    cursor: pointer;
+}
+
+.boxes_info {
+    width: 85%;
+    max-width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.boxes_info .titulo_info {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.boxes_info .lista_info {
+    padding: 15px 30px;
+}
+
+.boxes_info .lista_info .info {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.boxes_info .lista_info .info span {
+    font-weight: 600;
+    color: #5b5baa;
+}
+
+.boxes_info .botoes {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: 1px solid lightgrey;
+}
+
+.boxes_info .botoes button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #3b3bc2;
+    transition: all 0.3s ease;
+    
+}
+
+.botoes button.reiniciar {
+    color: #000000;
+    background: #5b5baa;
+}
+
+.botoes button.reiniciar:hover {
+    background: #9d9afb;
+    color: #000000;
+}
+
+.botoes button.sair {
+    color: #000000;
+    background: #9d9afb;
+ 
+}
+
+.botoes button.sair:hover {
+    color: #000000;
+    background: #5b5baa;
+}
+
+.box_quiz {
+    width: 550px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.box_quiz header {
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.box_quiz header .titulo {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.box_quiz section {
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+    
+}
+
+.box_quiz section .pergunta {
+    
+    font-size: 25px;
+    font-weight: 600;
+}
+
+section .lista_opcoes {
+    padding: 20px 0px;
+    display: block;   
+}
+
+section .lista_opcoes .opcoes {
+    
+    background: #f4e4f1;
+    border: 1px solid #9d9afb;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .lista_opcoes .opcoes:hover {
+    color: #000;
+    background: #ffc8e1;
+    border: 1px solid #5b5baa;
+}
+
+.lista_opcoes .opcoes:last-child {
+    margin-bottom: 0px;
+}
+
+
+.lista_opcoes .opcoes .icone.certo {
+    color: #155724;
+    border-color: #155724;
+    background: #a6f1b8;
+}
+
+.lista_opcoes .opcoes .icone.errado {
+    color: #721c24;
+    background: #f7b2b9;
+    border-color: #721c24;
+}
+
+.lista_opcoes .opcoes.correta {
+    color: #155724;
+    background: #a6f1b8;
+    border: 1px solid #155724;
+}
+
+.lista_opcoes .opcoes.incorreta {
+    color: #721c24;
+    background: #f7b2b9;
+    border: 1px solid #721c24;
+}
+
+
+.lista_opcoes .opcoes.desativado {
+    pointer-events: none;
+}
+
+
+footer {
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .total_questao span {
+    display: flex;
+    user-select: none;
+}
+
+footer .total_questao span p {
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+
+.total_questao span p:first-child {
+    padding-left: 0px;
+}
+
+footer .proximo_btn {
+    display: none;
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    color: #000000;
+    background: #5b5baa;
+    border-radius: 5px;
+    border: 1px solid #3b3bc2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+footer .proximo_btn:hover {
+    background: #9d9afb;
+}
+
+.box_resultado {
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+   
+}
+
+.box_resultado .icon {
+    font-size: 100px;
+    color: #5b5baa;
+    margin-bottom: 10px;
+}
+
+.box_resultado .complete_texto {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.box_resultado .texto_pontuacao span {
+    display: flex;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;    
+    text-align: left;
+}
+
+.box_resultado .texto_pontuacao span p {
+    padding: 0 4px;
+    font-weight: 500;
+}
+
+.box_resultado .botoes {
+    display: flex;
+    margin: 20px 0;
+   
+}
+
+.box_resultado .botoes button {
+    margin: 0 10px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #3b3bc2;
+    transition: all 0.3s ease;
+
+}
